@@ -198,17 +198,22 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
         if ([self hasLeftViewController])
         {
             [self showLeftViewControllerAnimated:animated completion:completion];
-            NSLog(@"Show Left");
         }
         
     }
     else
     {
-        NSLog(@"Show Front");
         [self showFrontViewControllerAnimated:animated completion:completion];
     }
 }
 
+
+-(void) toggleLeftView {
+    UIViewController * controllerToShow = nil;
+    
+    controllerToShow = (self.state == PKRevealControllerFocusesFrontViewController) ? self.leftViewController : self.frontViewController;
+    [self showViewController:controllerToShow];
+}
 
 - (void)enterPresentationModeAnimated:(BOOL)animated
                            completion:(PKDefaultCompletionHandler)completion

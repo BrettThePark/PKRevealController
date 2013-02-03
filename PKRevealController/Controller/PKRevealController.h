@@ -251,6 +251,9 @@ typedef void(^PKDefaultErrorHandler)(NSError *error);
  */
 - (UIViewController *)focusedController;
 
+
+-(void) toggleLeftView;
+
 /**
  * @return PKRevealControllerType - Returns the controller type, i.e. whether it has a left side, a right side, both or none.
  */
