@@ -93,7 +93,7 @@ extern NSString * const PKRevealControllerDisablesFrontViewInteractionKey;
  * @default YES
  * @value NSNumber containing BOOL
  */
-extern NSString * const PKRevealControllerRecognizesPanningOnFrontViewKey;
+extern NSString * const PKRevealControllerRecognizesPanningOnLeftViewKey;
 
 /*
  * Determines whether there's a UITapGestureRecognizer placed over the entire front view, when presenting
@@ -128,7 +128,7 @@ typedef void(^PKDefaultErrorHandler)(NSError *error);
 @property (nonatomic, assign, readwrite) CGFloat quickSwipeVelocity;
 @property (nonatomic, assign, readwrite) BOOL allowsOverdraw;
 @property (nonatomic, assign, readwrite) BOOL disablesFrontViewInteraction;
-@property (nonatomic, assign, readwrite) BOOL recognizesPanningOnFrontView;
+@property (nonatomic, assign, readwrite) BOOL recognizesPanningOnLeftView;
 @property (nonatomic, assign, readwrite) BOOL recognizesResetTapOnFrontView;
 
 #pragma mark - Methods
