@@ -425,7 +425,11 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
         }
         
         self.frontViewContainer.frame = [self frontViewFrameForCurrentState];
-        [self.view addSubview:self.frontViewContainer];
+        if (self.leftViewContainer.window)
+            [self.view insertSubview:self.frontViewContainer belowSubview:self.leftViewContainer];
+        else
+            [self.view addSubview:self.frontViewContainer];
+        
         [self.frontViewController didMoveToParentViewController:self];
     }
 }
